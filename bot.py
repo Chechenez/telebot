@@ -44,8 +44,10 @@ def get_answer(message):
         bot.send_message(message.chat.id, result)
         if message.chat.id in i_love_you:
             bot.send_message(message.chat.id, 'Админ просил передать, что любит тебя')
-    except exception:
-        bot.send_message(message.chat.id, 'В базе данных нет ответа на эту задачу.')
+    except Exception as e:
+        print(e)
+        print(repr(e))
+        print(e.args)
 
 
 bot.polling()
